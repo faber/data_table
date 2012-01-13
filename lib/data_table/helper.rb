@@ -12,7 +12,7 @@ module DataTable
       template = opts.delete(:template) || table.template_path
       table.html_opts = opts
       yield table if block_given?
-      render :template => template, :locals => table.locals
+      render :partial => template, :locals => table.locals
     end
     
     def sort_url_for_column(col)
