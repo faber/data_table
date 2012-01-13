@@ -37,4 +37,11 @@ module DataTable
 
 end
 
+require 'data_table/base'
+require 'data_table/column'
+require 'data_table/filter'
+require 'data_table/helper'
+require 'data_table/version'
+require 'data_table/active_record_ext'
+
 ActiveRecord::Base.send :include, DataTable::ActiveRecordExt
