@@ -1,7 +1,7 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'data_table'
+require 'data_table/version'
 
 Gem::Specification.new do |s|
   s.name        = "data_table"
