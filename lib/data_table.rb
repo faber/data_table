@@ -1,4 +1,5 @@
 module DataTable
+  VERSION = '0.0.1'
   # -Creating a Data Table-
   # To create a data table, pass it an object that you can build scopes on, and parameters:
   #     table = DataTable.new(scopable, params)
@@ -34,7 +35,6 @@ module DataTable
     Base.new(*args,&block)
   end
   module_function :new
-
 
 end
 
