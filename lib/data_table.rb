@@ -1,4 +1,6 @@
 module DataTable
+  extend self
+  
   # -Creating a Data Table-
   # To create a data table, pass it an object that you can build scopes on, and parameters:
   #     table = DataTable.new(scopable, params)
@@ -33,7 +35,15 @@ module DataTable
   def new(*args,&block)
     Base.new(*args,&block)
   end
-  module_function :new
+
+  def default_template=(val)
+    @default_template = val
+  end
+  
+  def default_template
+    @default_template || 'shared/data_table'
+  end
+  
 
 end
 

@@ -24,7 +24,7 @@ module DataTable
       @sort_key       = params[:sort]
       @page           = params[:page]
       @per_page       = params[:per_page]
-      @template_path  = params[:template_path] || File.expand_path('../_data_table.html.haml', __FILE__)
+      @template_path  = params[:template_path] || DataTable.default_template # File.expand_path('../_data_table.html.haml', __FILE__)
       yield self if block_given?
     end
     
