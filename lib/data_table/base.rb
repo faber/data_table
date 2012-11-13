@@ -53,6 +53,7 @@ module DataTable
       @sort_key = sort.to_sym
     end
     def sort_dir(dir)
+      dir ||= :asc
       @sort_dir = dir.to_sym == :asc ? :asc : :desc
     end
     
