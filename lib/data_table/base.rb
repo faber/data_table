@@ -20,11 +20,13 @@ module DataTable
       @filters        = []
       @html_opts      = {}
       @finder         = finder
-      @sort_dir       = params[:dir] || :asc
-      @sort_key       = params[:sort]
       @page           = params[:page]
       @per_page       = params[:per_page]
       @template_path  = params[:template_path] || DataTable.default_template # File.expand_path('../_data_table.html.haml', __FILE__)
+      @sort_key       = params[:sort]      
+      @sort_dir       = :asc
+      self.sort_dir(params[:dir]) ## Run this through the method since it validates the direction
+      
       yield self if block_given?
     end
     
@@ -51,7 +53,7 @@ module DataTable
       @sort_key = sort.to_sym
     end
     def sort_dir(dir)
-      @sort_dir = dir
+      @sort_dir = dir.to_sym == :asc ? :asc : :desc
     end
     
     def page(page)
